@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio & CV</title>
+  <style>
+    /* Basic CSS styles */
+    body {
+      font-family: Calibri, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #F5F5DC;
+    }
+
+    .background-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      z-index: -1;
+      background-image: url('http://coolcomputersetups.com/images/ff6b66.jpg');
+      /* Replace with your image URL */
+      background-size: cover;
+      background-position: center;
+    }
+
+    .background-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7); /* Adjust the transparency (0.5 for 50% opacity) */
+    }
+
+    .content-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+
+    header h2::before {
+      content: "";
+      display: inline-block;
+      width: 20px; /* Diameter of the circle */
+      height: 20px; /* Diameter of the circle */
+      border-radius: 50%; /* Create a circle */
+      background-color: #756AB6; /* Circle color */
+      margin-right: 10px; /* Adjust spacing between circle and name */
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    nav ul li a {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 0.8em;
+      font-weight: bold;
+      text-decoration: none;
+      background-color: #E6E6FA;
+      color: #000;
+      border-radius: 5px;
+      transition: transform 0.3s ease; /* Transition added for smooth animation */
+      transform: translateX(0); /* Initial position */
+    }
+
+    nav ul li a:hover {
+      background-color: #0056b3;
+      color: #fff;
+    }
+
+    .profile-section {
+      text-align: top;
+    }
+
+    .profile-info {
+      display: flex;
+      align-items: top;
+      justify-content: center;
+    }
+
+    .profile-image {
+      margin-right: 50px;
+    }
+
+    .profile-image img {
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 0px solid #333;
+    }
+
+    .profile-text {
+      text-align: left;
+      margin-top: -3em; /* Adjusted margin top */
+    }
+
+    h1 {
+      font-size: 8em;
+      margin-bottom: -0.2em; /* Adjusted margin bottom */
+      position: relative;
+      animation: scrollAnimation 1.5s forwards;
+    }
+
+    h2 {
+      font-size: 2em;
+      margin-top: 2em; /* Adjusted margin top */
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid #fff;
+      padding-right: 8px;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .scroll-animation {
+      animation: scrollAnimation 1.5s forwards;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 8px 15px;
+      font-size: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      background-color: #E6E6FA;
+      color: #000;
+      border-radius: 50px;
+      transition: transform 0.3s ease; /* Transition added for smooth animation */
+      margin: 2px 0;
+      transform: translateX(0); /* Initial position */
+    }
+
+    .button:hover {
+      background-color: #0056b3;
+      transform: translateX(3px); /* Move button to the left */
+      color: #fff;
+    }
+
+    footer {}
+
+    @keyframes scrollAnimation {
+      0% {
+        transform: translateX(0px); /* Initial position */
+      }
+
+      50% {
+        transform: translateX(50px);
+      }
+
+      100% {
+        transform: translateX(0px); /* Back to initial position */
+      }
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%; /* Adjust width as needed */
+      max-width: 500px;
+      text-align: center;
+      background-color: rgba(50, 50, 50, 0.95); /* Dark grey color */
+      border-radius: 10px;
+      animation: modalAnimation 0.5s ease-out; /* Add animation */
+      padding: 20px;
+      color: #fff;
+    }
+
+    /* Keyframes for modal animation */
+    @keyframes modalAnimation {
+      from {
+        transform: translate(-50%, 150%);
+        opacity: 0;
+      }
+      to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+      }
+    }
+
+    /* Close button styles */
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="background-container">
+    <div class="background-overlay"></div>
+  </div>
+
+  <div class="content-container">
+    <header>
+      <!--<h2>Ahmad Naeem</h2>-->
+    </header>
+    <section class="profile-section">
+      <div class="profile-info">
+        <div class="profile-image">
+          <img src="https://media.licdn.com/dms/image/C4E03AQEf3bbq10MS_w/profile-displayphoto-shrink_800_800/0/1639416317589?e=1709164800&v=beta&t=NSIMjHSnxsEzeUdVQE0tpk5gSA0U8-uwSfUjJr_VI-w" alt="Profile Image">
+        </div>
+        <div class="profile-text scroll-animation">
+          <h1>Ahmad Naeem</h1>
+          <h2>A bit about me</h2>
+          <p>My name is Ahmad Naeem, I am an embedded system engineer with overall experience of over 6 years</p>
+          <nav>
+            <ul>
+              <li><a href="resume.html" class="button" id="resumeBtn">View Resume</a></li>
+              <li><a href="portfolio.html" class="button" id="portfolioBtn">View Portfolio</a></li>
+              <li><a href="#" class="button" id="contactBtn">Contact Info</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </section>
+    <footer></footer>
+  </div>
+
+  <!-- Modal for Contact Info -->
+  <div class="modal" id="contactModal">
+    <span class="close-btn" id="closeModal">&times;</span>
+    <h2>Contact Info</h2>
+    <p>Email: ahmad01sultan@gmail.com</p>
+    <p>Phone: +92-3244764287</p>
+  </div>
+
+  <script>
+    document.getElementById('contactBtn').addEventListener('click', function() {
+      document.getElementById('contactModal').style.display = 'block';
+    });
+
+    document.getElementById('closeModal').addEventListener('click', function() {
+      document.getElementById('contactModal').style.display = 'none';
+    });
+  </script>
+</body>
+</html>
