@@ -34,8 +34,8 @@
       height: 100%;
       background-color: rgba(0, 0, 0, 0.7); /* Adjust the transparency (0.5 for 50% opacity) */
     }
-
-    .content-container {
+    
+       .content-container {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -216,6 +216,49 @@
     .close-btn:hover {
       color: #fff;
     }
+
+    /* Media query for smaller screens */
+    @media only screen and (max-width: 768px) {
+      .profile-info {
+        flex-direction: column;
+      }
+
+      .profile-image {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+
+      .profile-image img {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+        border-radius: 50%;
+      }
+
+      .profile-text {
+        text-align: center;
+        margin-top: 0;
+      }
+
+      h1 {
+        font-size: 4em;
+      }
+
+      h2 {
+        font-size: 1.5em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+      }
+
+      .button {
+        font-size: 16px;
+      }
+    }
+
+    /* Rest of your CSS remains unchanged */
+
+    /* ... */
+
   </style>
 </head>
 <body>
@@ -224,7 +267,7 @@
   </div>
 
   <div class="content-container">
-    <header>
+   <header>
       <!--<h2>Ahmad Naeem</h2>-->
     </header>
     <section class="profile-section">
@@ -247,6 +290,7 @@
       </div>
     </section>
     <footer></footer>
+
   </div>
 
   <!-- Modal for Contact Info -->
@@ -258,6 +302,7 @@
   </div>
 
   <script>
+    // JavaScript for modal toggling
     document.getElementById('contactBtn').addEventListener('click', function() {
       document.getElementById('contactModal').style.display = 'block';
     });
