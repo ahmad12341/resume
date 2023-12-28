@@ -52,7 +52,7 @@
         }
 
         .project img {
-            max-width: 55%; /* Make images responsive */
+            max-width: 100%; /* Make images responsive */
             height: auto;
             margin-bottom: 10px; /* Provide some spacing between image and description */
             margin-right: 300px;
@@ -60,13 +60,17 @@
 
         .project-description {
             flex: 1;
-            margin-left: 330px;/*moves description to right*/
+            margin-left: 330px; /* Moves description to the right */
             max-width: 60%; /* Limit the width of the description */
+            overflow: hidden; /* Hide overflow content */
         }
 
         h2 a {
             color: black; /* Set font color to black */
             text-decoration: none; /* Remove underline */
+            white-space: nowrap; /* Prevent text wrapping */
+            display: inline-block;
+            animation: scrollRightLeft 1s linear forwards; /* Animation for scrolling */
         }
 
         h2 {
@@ -83,10 +87,20 @@
                 flex-direction: column; /* Stack items vertically on smaller screens */
                 text-align: center; /* Center-align content */
             }
-
+            
             .project-description {
                 margin-left: 0;
                 max-width: 100%; /* Expand description to full width */
+            }
+        }
+
+        /* Keyframes for animation */
+        @keyframes scrollRightLeft {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(10%);
             }
         }
     </style>
