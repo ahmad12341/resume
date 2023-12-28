@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO</title>
+    <style>
+        /* Basic CSS for layout (can be expanded upon) */
+        body {
+            font-family: Mirante, sans-serif;
+            margin-top: 300px;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #FFFFFF; /* Pastel color for the top bar */
+            width: 100%;
+            height: 90px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            padding-left: 100px; /* Adjust left padding for the title */
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08); /* Adding a subtle box shadow */
+        }
+
+        h1 {
+            font-size: 50px;
+            margin: 0; /* Remove default margin */
+            color: black; /* Title color */
+            padding-left: 220px;
+        }
+        
+        .portfolio-title {
+            padding-left: 100px;
+            text-align: left;
+            font-size: 28px; /* Font size greater than project names */
+            margin-top: 180px; /* Adjust the space between header and title */
+        }
+        
+        .project {
+            display: flex;
+            align-items: top;
+            justify-content: space-between;
+            padding: 80px 20px 20px; /* Adjust padding to accommodate the top bar */
+            border-bottom: 1px solid #ccc;
+            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+        }
+
+        .project img {
+            max-width: 100%; /* Make images responsive */
+            height: auto;
+            margin-bottom: 10px; /* Provide some spacing between image and description */
+            margin-right: 300px;
+        }
+
+        .project-description {
+            flex: 1;
+            margin-left: 330px;/*moves description to right*/
+            max-width: 60%; /* Limit the width of the description */
+        }
+
+        h2 a {
+            color: black; /* Set font color to black */
+            text-decoration: none; /* Remove underline */
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+
+        /* Media query for responsiveness */
+        @media (max-width: 768px) {
+            .project {
+                flex-direction: column; /* Stack items vertically on smaller screens */
+                text-align: center; /* Center-align content */
+            }
+
+            .project-description {
+                margin-left: 0;
+                max-width: 100%; /* Expand description to full width */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!--<h1>PORTFOLIO</h1> <!-- Title at the left side of the header -->
+    </header>
+    
+    <div class="portfolio-title">
+        <h1>PROJECTS</h1> <!-- Title below the header -->
+    </div>
+
+    <div class="project">
+        <div class="project-description">
+            <h2><a href="project1_link_here" target="_blank">Water Management System</a></h2>
+            <p>Description of Project 1 goes here.</p>
+        </div>
+        <a href="project1_link_here" target="_blank"><img src="https://blog.matric.com/hubfs/printed%20circuit%20board%20layout%20soldering.jpg" alt="Project 1 Image"></a>
+    </div>
+
+    <div class="project">
+        <div class="project-description">
+            <h2><a href="project2_link_here" target="_blank">Project Name 2</a></h2>
+            <p>Description of Project 2 goes here.</p>
+        </div>
+        <a href="project2_link_here" target="_blank"><img src="project2.jpg" alt="Project 2 Image"></a>
+    </div>
+
+    <!-- Add more projects as needed -->
+
+    <script>
+        // JavaScript to handle clicking the project name to open a link
+        const projectNames = document.querySelectorAll('.project-description h2 a');
+        projectNames.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.stopPropagation(); // Prevents image link from triggering if the project name is clicked
+            });
+        });
+    </script>
+</body>
+
+</html>
